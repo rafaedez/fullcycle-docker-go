@@ -4,6 +4,6 @@ COPY *.go ./
 RUN GOOS=linux GOARCH=amd64 go build -v -o /usr/local/bin/app ./...
 ENTRYPOINT ["/usr/local/bin/app"]
 
-FROM alpine
+FROM scratch
 COPY --from=builder /usr/local/bin/app /usr/local/bin/app
 ENTRYPOINT ["/usr/local/bin/app"]
