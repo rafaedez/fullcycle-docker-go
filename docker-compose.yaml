@@ -1,0 +1,7 @@
+version: '3'
+
+services:
+  go:
+    image: rafaedez/go-fullcycle
+    container_name: go-fullcycle
+    
