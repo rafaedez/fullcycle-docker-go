@@ -1,2 +1,3 @@
-Docker golang com tamanho final 2MB
+Docker golang com tamanho final 2MB.
+
 DockerHub: rafaedez/go-fullcycle
