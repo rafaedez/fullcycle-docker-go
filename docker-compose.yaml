@@ -2,5 +2,7 @@ version: '3'
 
 services:
   go:
+    build:
+      context: ./
     image: rafaedez/go-fullcycle
     container_name: go-fullcycle

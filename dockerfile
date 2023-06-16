@@ -1,9 +1,9 @@
 FROM golang:1.13.8 as builder
 WORKDIR /usr/src/app
 COPY *.go ./
-RUN GOOS=linux GOARCH=amd64 go build -v -o /usr/local/bin/app ./...
-ENTRYPOINT ["/usr/local/bin/app"]
+RUN GOOS=linux GOARCH=amd64 go build -v -o app
 
 FROM scratch
-COPY --from=builder /usr/local/bin/app /usr/local/bin/app
-ENTRYPOINT ["/usr/local/bin/app"]
+WORKDIR /usr/src/app
+COPY --from=builder /usr/src/app/app app
+ENTRYPOINT ["./app"]
